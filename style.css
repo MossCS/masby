@@ -1,0 +1,249 @@
+@font-face {
+	font-family: "Montserrat";
+	src: url("assets/font/Montserrat-Regular.otf") format("opentype");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("assets/font/Montserrat-SemiBold.otf") format("opentype");
+	font-style: normal;
+	font-weight: 600 700;
+	font-display: swap;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	background-color: #ec3237;
+	background-image: radial-gradient(ellipse at bottom, #ff4348 0%, #ec3237 100%);
+}
+
+.stars {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(ellipse at bottom, #ff4348 0%, #ec3237 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.star {
+	position: absolute;
+	border-radius: 50%;
+}
+
+.cursor-particles {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 2;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	min-height: 100dvh;
+	color: #ecf0f1;
+	background: #ec3237;
+	background-image: radial-gradient(ellipse at bottom, #ff4348 0%, #ec3237 100%);
+	font-family: Arial, sans-serif;
+	overflow: hidden;
+}
+
+main {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	box-sizing: border-box;
+	padding: 32px 20px 72px;
+	text-align: center;
+}
+
+main section {
+	width: min(100%, 680px);
+}
+
+.logo {
+	display: block;
+	width: clamp(104px, 19vw, 170px);
+	height: clamp(104px, 19vw, 170px);
+	object-fit: contain;
+	margin: 0 auto 22px;
+	animation: fadeIn 0.6s ease-out both;
+}
+
+.title {
+	font-family: monospace;
+	font-size: clamp(2rem, 8vw, 5rem);
+	text-align: center;
+	animation: fadeIn 0.5s ease-in 0.2s both;
+	margin: 0;
+	padding: 0;
+	overflow-wrap: anywhere;
+}
+
+.hr-container {
+	animation: fadeIn 0.5s ease-in 0.2s both;
+	display: flex;
+	justify-content: center;
+}
+
+.hr {
+	border: 0;
+	height: 1px;
+	width: min(100%, 420px);
+	background: #ffffff;
+	margin: 20px 0;
+	display: inline-block;
+	margin: 10px 0px;
+	padding: 0;
+}
+
+.sub-title {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-weight: 600;
+	font-size: clamp(1rem, 4vw, 1.5rem);
+	text-align: center;
+	animation: fadeIn 0.5s ease-in 0.2s both;
+	margin: 0;
+	padding: 0;
+}
+
+.linktree-button {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	min-height: 52px;
+	margin-top: 28px;
+	padding: 0 26px;
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.14);
+	box-shadow: 0 8px 24px rgba(111, 12, 16, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+	color: #fff;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	backdrop-filter: blur(8px);
+	-webkit-tap-highlight-color: transparent;
+	transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+	animation: fadeIn 0.5s ease-in 0.3s both;
+}
+
+.linktree-button:hover {
+	transform: translateY(-4px) scale(1.03);
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 14px 30px rgba(111, 12, 16, 0.3), 0 0 24px rgba(255, 255, 255, 0.2);
+}
+
+.linktree-button:active {
+	transform: translateY(0) scale(0.97);
+}
+
+.linktree-button:focus-visible {
+	outline: 3px solid #fff;
+	outline-offset: 4px;
+}
+
+.button-arrow {
+	font-size: 1.25em;
+	transition: transform 180ms ease;
+}
+
+.linktree-button:hover .button-arrow {
+	transform: translate(3px, -3px);
+}
+
+.copyright {
+	font-size: .85rem;
+	text-align: center;
+	padding: 20px;
+	animation: fadeIn 0.5s ease-in 0.2s both;
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+
+footer {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	z-index: 1;
+	pointer-events: none;
+}
+
+@media only screen and (max-width: 300px) {
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.sub-title {
+		font-size: 0.9rem;
+	}
+
+	.copyright {
+		font-size: .7rem;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes moveUp {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(-100vh);
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding: 24px 18px 78px;
+	}
+
+	.logo {
+		margin-bottom: 16px;
+	}
+
+	.linktree-button {
+		min-height: 50px;
+		margin-top: 24px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
